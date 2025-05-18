@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JEFO EVENTS - Accueil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header + menu -->
+  <header class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div class="text-red-600 font-bold text-2xl cursor-pointer select-none">JEFO EVENTS</div>
+
+      <!-- Menu desktop -->
+      <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+        <a href="index.html" class="hover:text-red-600">Accueil</a>
+        <a href="payment.html" class="hover:text-red-600">Acheter un billet</a>
+        <a href="#whatsapp" class="hover:text-red-600">Groupe WhatsApp</a>
+        <a href="privacy.html" class="hover:text-red-600">Politique de confidentialité</a>
+        <a href="developer.html" class="hover:text-red-600">Infos développeur</a>
+      </nav>
+
+      <!-- Burger menu mobile -->
+      <div class="md:hidden">
+        <button id="menuBtn" aria-label="Ouvrir menu" class="focus:outline-none">
+          <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile panel -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-md border-t border-gray-200 max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <nav class="flex flex-col space-y-4 p-5 font-semibold text-gray-700 text-lg">
+        <a href="index.html" class="hover:text-red-600" onclick="toggleMenu()">Accueil</a>
+        <a href="payment.html" class="hover:text-red-600" onclick="toggleMenu()">Acheter un billet</a>
+        <a href="#whatsapp" class="hover:text-red-600" onclick="toggleMenu()">Groupe WhatsApp</a>
+        <a href="privacy.html" class="hover:text-red-600" onclick="toggleMenu()">Politique de confidentialité</a>
+        <a href="developer.html" class="hover:text-red-600" onclick="toggleMenu()">Infos développeur</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow pt-24 max-w-4xl mx-auto px-6 sm:px-8 space-y-12">
+
+    <!-- Présentation -->
+    <section id="presentation" class="text-center">
+      <h1 class="text-5xl font-extrabold text-red-600 mb-6">JEFO EVENTS</h1>
+      <p class="text-gray-700 text-lg max-w-3xl mx-auto mb-8">
+        Le 25/05/2025 à la Villa des Défis.<br />
+        Venez vivre une soirée unique avec DJ, animations, et ambiance exceptionnelle.
+      </p>
+      <img
+        src="https://files.catbox.moe/3lm897.jpeg"
+        alt="Visuel JEFO EVENTS"
+        class="mx-auto rounded-lg shadow-lg max-h-96 w-full object-cover"
+      />
+    </section>
+
+    <!-- Boutons -->
+    <section id="actions" class="text-center space-y-6">
+      <a href="payment.html"
+        class="inline-block bg-red-600 text-white px-8 py-4 rounded-lg shadow-lg font-semibold hover:bg-red-700 transition"
+      >
+        Acheter un billet
+      </a>
+      <br />
+      <a href="https://chat.whatsapp.com/CSx1ewLuPFsAgIfmm7Ve2Q" target="_blank"
+        class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg shadow-lg font-semibold hover:bg-green-700 transition"
+      >
+        Rejoindre le groupe WhatsApp
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center text-gray-500 py-6 mt-16 text-sm">
+    &copy; 2024 JEFO EVENTS - Tous droits réservés
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function toggleMenu() {
+      if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
